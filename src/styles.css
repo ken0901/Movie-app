@@ -2,6 +2,8 @@
 @import '../src/app/styles/_init-css.css';
 @import '../src/app/styles/_color.css';
 
+@import "~primeflex/primeflex.css";
+
 body {
     font-family: 'Roboto', sans-serif;
 }
