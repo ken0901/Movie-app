@@ -6,4 +6,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #212121;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
