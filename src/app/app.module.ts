@@ -18,6 +18,7 @@ import { MoviesComponent } from './pages/movies/movies.component';
     ],
     imports: [
         BrowserModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
