@@ -21,7 +21,7 @@
 
 }
 
-.slider .slide .slide-bg ::after {
+.slider .slide .slide-bg:after {
     position: absolute;
     top: 0;
     right: 0;
@@ -38,14 +38,41 @@
     );
 }
 
-.slider .slide .slide-pane {
-    position: absolute;
-    top: 200px;
-    left: 200px;
-}
-
 .slider .slide .slide-bg .slide-bg-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.slider .slide .slide-pane {
+    position: absolute;
+    width: 45%;
+    top: 5rem;
+    left: 5rem;
+}
+
+.slider .slide .slide-pane .name {
+    font-size: 2.8rem;
+    color: #fff;
+}
+
+.slider .slide .slide-pane .meta {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+.slider .slide .slide-pane .desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.slider .slide .slide-pane .info {
+    
+}
+
+.slider .slide .slide-pane .info >span+span:before {
+    content: '|';
+    margin-right: 9px;
+    margin-left: 9px;
 }
