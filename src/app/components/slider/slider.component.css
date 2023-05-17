@@ -68,11 +68,26 @@
 }
 
 .slider .slide .slide-pane .info {
-    
+    display: flex;
 }
 
 .slider .slide .slide-pane .info >span+span:before {
     content: '|';
     margin-right: 9px;
     margin-left: 9px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating .app-icons {
+    margin-right: 5px;
+    color: #d4af37;
+}
+
+.rating .rating-value {
+    color: #fff;
+    font-size: 1.8rem;
 }
