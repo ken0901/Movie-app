@@ -17,22 +17,22 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.moviesService.getMovies('popular')
       .subscribe(
-        (data: any) => {
-          this.popularMovies = data.results;
+        (data) => {
+          this.popularMovies = data;
         }
     );
 
     this.moviesService.getMovies('top_rated')
       .subscribe(
-        (data: any) => {
-          this.topRatedMovies = data.results;
+        (data) => {
+          this.topRatedMovies = data;
         }
     );
 
     this.moviesService.getMovies('upcoming')
       .subscribe(
-        (data: any) => {
-          this.upcomingMovies = data.results;
+        (data) => {
+          this.upcomingMovies = data;
         }
     );
   }
