@@ -12,6 +12,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import {PaginatorModule} from 'primeng/paginator';
+
 
 @NgModule({
     declarations: [
@@ -28,7 +30,8 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        PaginatorModule
     ],
     providers: [],
     bootstrap: [AppComponent]
