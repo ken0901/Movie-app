@@ -7,7 +7,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'movies', component: MoviesComponent},
-  {path: 'movie', component: MovieDetailComponent},
+  {path: 'movie/:id', component: MovieDetailComponent},
   {path:'**', redirectTo: ''}
 ];
 
