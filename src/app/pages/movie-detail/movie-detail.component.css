@@ -1,0 +1,8 @@
+:host ::ng-deep {
+    .p-tabview-nav {
+        justify-content: center;
+    }
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+        background: #141414;
+    }
+}
