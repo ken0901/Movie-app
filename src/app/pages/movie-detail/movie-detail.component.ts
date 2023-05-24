@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IMAGES_SIZES } from 'app/constants/images-sizes';
 import { Movie, MovieCredits, MovieImages, MovieVideo } from 'app/models/movie.model';
 import { MoviesService } from 'app/services/movies.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.css']
 })
-export class MovieDetailComponent implements OnInit {
+export class MovieDetailComponent implements OnInit, OnDestroy {
   movie: Movie | null = null;
   movieVideos: MovieVideo[] = [];
   movieImages: MovieImages | null = null;
@@ -20,12 +21,16 @@ export class MovieDetailComponent implements OnInit {
               private movieService: MoviesService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(({id}) => {
+    this.route.params.pipe(first()).subscribe(({id}) => {
       this.getMovieById(id);
       this.getMovieVideos(id);
       this.getMovieImages(id);
       this.getMovieCredits(id);
     });
+  }
+
+  ngOnDestroy(){
+    console.log('component destroyed');
   }
 
   getMovieById(id: string){
