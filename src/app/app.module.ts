@@ -17,6 +17,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 import {TabViewModule} from 'primeng/tabview';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import {ImageModule} from 'primeng/image';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import {ImageModule} from 'primeng/image';
         BrowserAnimationsModule,
         PaginatorModule,
         TabViewModule,
-        ImageModule
+        ImageModule,
+        CarouselModule
     ],
     providers: [],
     bootstrap: [AppComponent]

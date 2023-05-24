@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from 'environments/environment';
-import { Movie, MovieDto, MovieImages, MovieVideoDto } from '../models/movie.model';
+import { Movie, MovieCredits, MovieDto, MovieImages, MovieVideoDto } from '../models/movie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +41,9 @@ export class MoviesService {
 
   getMovieImages(id: string) {
     return this.http.get<MovieImages>(`${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`);
+  }
+
+  getMovieCredits(id: string) {
+    return this.http.get<MovieCredits>(`${this.baseUrl}/movie/${id}/credits?api_key=${this.apiKey}`);
   }
 }
