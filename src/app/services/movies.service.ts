@@ -21,32 +21,39 @@ export class MoviesService {
         return of(res.results.slice(0, count))
       }));
   }
-
+  
   searchMovies(page: number) {
     return this.http.get<MovieDto>(`${this.baseUrl}/movie/popular?page=${page}&api_key=${this.apiKey}`)
-      .pipe(switchMap( res => {
-        return of(res.results)
-      }));
+    .pipe(switchMap( res => {
+      return of(res.results)
+    }));
   }
-
+  
   getMovieById(id: string){
     return this.http.get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
   }
-
+  
   getMovieVideos(id: string) {
     return this.http.get<MovieVideoDto>(`${this.baseUrl}/movie/${id}/videos?api_key=${this.apiKey}`)
-      .pipe(switchMap( res => {
-        return of(res.results)
-      }));
+    .pipe(switchMap( res => {
+      return of(res.results)
+    }));
   }
 
   getMovieGernes() {
     return this.http.get<GenresDto>(`${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}`)
-      .pipe(switchMap( res => {
-        return of(res.genres)
-      }));
+    .pipe(switchMap( res => {
+      return of(res.genres)
+    }));
   }
 
+  getMoviesByGerne(id: string, pageNumber: number) {
+    return this.http.get<MovieDto>(`${this.baseUrl}/discover/movie?with_genres=${id}&page=${pageNumber}&api_key=${this.apiKey}`)
+      .pipe(switchMap( res => {
+        return of(res.results)
+      }));
+  }
+  
   getMovieImages(id: string) {
     return this.http.get<MovieImages>(`${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`);
   }

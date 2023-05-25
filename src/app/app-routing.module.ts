@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'movie/:id', component: MovieDetailComponent},
   {path: 'tvShows', component: TvShowsComponent},
   {path: 'genres', component: GenresComponent},
+  {path: 'movies/genres/:genreId', component: MoviesComponent},
   {path:'**', redirectTo: ''}
 ];
 
