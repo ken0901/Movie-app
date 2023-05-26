@@ -21,6 +21,7 @@ import {CarouselModule} from 'primeng/carousel';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { TvItemComponent } from './components/tv-item/tv-item.component';
 import { GenresComponent } from './pages/genres/genres.component';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import { GenresComponent } from './pages/genres/genres.component';
         PaginatorModule,
         TabViewModule,
         ImageModule,
-        CarouselModule
+        CarouselModule,
+        InputTextModule
     ],
     providers: [],
     bootstrap: [AppComponent]
