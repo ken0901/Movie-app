@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Genre } from 'app/models/genre.model';
-import { MoviesService } from 'app/services/movies.service';
+import { MoviesService } from '../../services/movies.service';
+import { TvShowsService } from '../../services/tvshows.service';
+import { Genre } from '../../models/genre';
 
 @Component({
   selector: 'app-genres',
   templateUrl: './genres.component.html',
-  styleUrls: ['./genres.component.css']
+  styleUrls: ['./genres.component.scss']
 })
 export class GenresComponent implements OnInit {
   genres: Genre[] = [];
-
-  constructor(private movieService: MoviesService) { }
+  tvShowGenres: Genre[] = [];
+  constructor(private moviesService: MoviesService, private tvShowsService: TvShowsService) {}
 
   ngOnInit(): void {
-    this.movieService.getMovieGernes().subscribe(genresData => {
+    this.moviesService.getMoviesGenres().subscribe((genresData) => {
       this.genres = genresData;
     });
-  }
 
+    this.tvShowsService.getTvShowsGenres().subscribe((genresData) => {
+      this.tvShowGenres = genresData;
+    });
+  }
 }
